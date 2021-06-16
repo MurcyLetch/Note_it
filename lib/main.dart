@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:note_it/addnote.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +28,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text("                               Note it"),),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (_)=>Addnote()));
+
+        },
         backgroundColor: Colors.grey[700],
       ),
       body: GridView.builder(
